@@ -1,24 +1,14 @@
-The MIT License (MIT)
+> 🌐 本文档由 [iluwatar/java-design-patterns](https://github.com/iluwatar/java-design-patterns) 翻译,英文原版见原项目。以下中文译文仅供参考,许可效力以英文原版为准。
 
-Copyright � 2014-2024 Ilkka Seppälä
+# MIT 许可证(MIT)
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+版权所有 © 2014-2024 Ilkka Seppälä
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+特此免费向任何获得本软件副本及相关文档文件(以下称"软件")的任何人授予许可,允许其不受限制地处理本软件,包括但不限于使用、复制、修改、合并、发布、分发、再许可和/或销售软件副本,并允许向其提供软件的人这样做,但须满足以下条件:
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+上述版权声明和本许可声明应包含在软件的所有副本或实质性部分中。
 
-Module Model-view-viewmodel is using ZK framework
-ZK framework is licensed under LGPL and the license can be found at lgpl-3.0.txt
+本软件按"现状"提供,不附带任何形式的明示或默示保证,包括但不限于对适销性、特定用途适用性和非侵权性的保证。在任何情况下,作者或版权持有人均不对任何索赔、损害或其他责任负责,无论是在合同诉讼、侵权行为还是其他方面,只要该责任源于、产生于或与本软件或本软件的使用或其他处理有关。
+
+模块 Model-view-viewmodel 使用了 ZK 框架。
+ZK 框架基于 LGPL 许可,许可证全文见 lgpl-3.0.txt。

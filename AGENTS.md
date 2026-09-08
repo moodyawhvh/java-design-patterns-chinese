@@ -1,51 +1,53 @@
-# Java Design Patterns - Priming Context for AI Agents
+> 🌐 本文档由 [iluwatar/java-design-patterns](https://github.com/iluwatar/java-design-patterns) 翻译,英文原版见原项目。
 
-## Quick Overview
-- This repository is a comprehensive collection of design patterns implemented in Java.
-- The project demonstrates how to solve common software design problems using standard patterns.
-- The code for each pattern lives directly in this repository, alongside its explanatory README.
-- These readmes are published on the java-design-patterns.com website.
-- Another repository (https://github.com/iluwatar/java-design-patterns-vuepress-web) handles the deployment of the website.
+# Java 设计模式 - AI 智能体背景说明
 
-## Stack
-- **Java 21**: The primary programming language used for pattern implementations.
-- **Maven**: Dependency management and build tool.
-- **JUnit 5**: The testing framework used to verify pattern behaviors.
-- **Mockito**: Used for mocking dependencies in unit tests.
-- **Lombok**: Used to reduce boilerplate code (getters, setters, etc.).
-- **Spotless**: Enforces consistent code formatting via Google Java Format.
+## 快速概览
+- 本仓库是一个使用 Java 实现的设计模式大全。
+- 本项目展示如何运用标准设计模式解决常见的软件设计问题。
+- 每个模式的代码直接存放在本仓库中,并配有相应的说明 README。
+- 这些 README 会发布到 java-design-patterns.com 网站。
+- 另一个仓库(https://github.com/iluwatar/java-design-patterns-vuepress-web)负责该网站的部署。
 
-## Trusted Sources
-- [Java SE 21 Documentation](https://docs.oracle.com/en/java/javase/21/docs/api/)
-- [Maven Official Documentation](https://maven.apache.org/guides/index.html)
-- [JUnit 5 User Guide](https://junit.org/junit5/docs/current/user-guide/)
-- [Project Wiki](https://github.com/iluwatar/java-design-patterns/wiki)
+## 技术栈
+- **Java 21**:模式实现所用的主要编程语言。
+- **Maven**:依赖管理与构建工具。
+- **JUnit 5**:用于验证模式行为的测试框架。
+- **Mockito**:在单元测试中对依赖进行模拟(mock)。
+- **Lombok**:用于减少样板代码(getter、setter 等)。
+- **Spotless**:通过 Google Java Format 强制统一的代码格式。
 
-## Structure
-- `/pom.xml`: The root Maven configuration file that defines global dependencies and lists all pattern modules.
-- `/[pattern-name]/`: Individual folders for each design pattern (e.g., `/abstract-factory`, `/builder`), acting as standalone Maven modules.
-- `/[pattern-name]/src/main/java/`: Contains the actual Java implementation classes of the specific design pattern.
-- `/[pattern-name]/src/test/java/`: Contains the JUnit tests verifying the pattern's behavior.
-- `/[pattern-name]/README.md`: The documentation for the pattern, which gets published to the main website.
+## 可信资料来源
+- [Java SE 21 官方文档](https://docs.oracle.com/en/java/javase/21/docs/api/)
+- [Maven 官方文档](https://maven.apache.org/guides/index.html)
+- [JUnit 5 用户指南](https://junit.org/junit5/docs/current/user-guide/)
+- [项目 Wiki](https://github.com/iluwatar/java-design-patterns/wiki)
 
-## Patterns
-- Keep pattern implementations simple, atomic, and easy to understand.
-- Write descriptive and meaningful names for classes, interfaces, and methods.
-- Always include comprehensive unit tests for every new pattern or code modification.
-- Follow the Google Java Format strictly (enforced by Spotless).
-- Document the intent, explanation, and real-world usage clearly in each module's `README.md`.
+## 目录结构
+- `/pom.xml`:根 Maven 配置文件,定义全局依赖并列出所有模式模块。
+- `/[pattern-name]/`:每个设计模式独占一个文件夹(如 `/abstract-factory`、`/builder`),各自作为独立的 Maven 模块。
+- `/[pattern-name]/src/main/java/`:存放该设计模式的具体 Java 实现类。
+- `/[pattern-name]/src/test/java/`:存放验证该模式行为的 JUnit 测试。
+- `/[pattern-name]/README.md`:该模式的文档,会发布到主站。
 
-## Anti-patterns
-- Avoid overcomplicating patterns with unnecessary external dependencies or complex frameworks.
-- Do not introduce business logic that distracts from the core mechanism of the design pattern itself.
-- Submitting new patterns or features without corresponding unit tests is strictly discouraged.
-- Avoid large monolithic packages; each pattern should reside in its own isolated module.
+## 模式编写要求
+- 保持模式实现简单、原子化、易于理解。
+- 为类、接口和方法使用描述性强、含义清晰的命名。
+- 每个新模式或每次代码修改都必须附带完整的单元测试。
+- 严格遵循 Google Java Format(由 Spotless 强制执行)。
+- 在每个模块的 `README.md` 中清晰说明意图(intent)、解释和真实世界用法。
 
-## Example Design Pattern
-When a new design pattern is added to the repository, it generally follows these steps:
-- **Create a Module**: Create a new folder for the pattern in the root directory (e.g., `/my-new-pattern`).
-- **Update root pom.xml**: Add `<module>my-new-pattern</module>` to the `<modules>` section of the root `pom.xml`.
-- **Add Module pom.xml**: Create a `pom.xml` inside the new folder that inherits from the parent project.
-- **Write the Code**: Implement the pattern logic under `src/main/java/com/iluwatar/mynewpattern`, usually including an `App.java` class to demonstrate its usage.
-- **Write the Tests**: Add comprehensive unit tests under `src/test/java/com/iluwatar/mynewpattern`.
-- **Document**: Create a `README.md` at the root of the new module, structured with standard sections like Intent, Explanation, Class diagram, Applicability, and Real world examples.
+## 反模式(禁止事项)
+- 避免通过引入不必要的外部依赖或复杂框架把模式复杂化。
+- 不要引入偏离设计模式核心机制的的业务逻辑。
+- 强烈不建议提交没有对应单元测试的新模式或新功能。
+- 避免庞大的单体包;每个模式都应放在自己独立的模块中。
+
+## 新增设计模式示例流程
+向仓库添加新设计模式时,一般遵循以下步骤:
+- **创建模块**:在根目录为该模式新建一个文件夹(如 `/my-new-pattern`)。
+- **更新根 pom.xml**:在根 `pom.xml` 的 `<modules>` 部分添加 `<module>my-new-pattern</module>`。
+- **添加模块 pom.xml**:在新文件夹内创建继承父工程的 `pom.xml`。
+- **编写代码**:在 `src/main/java/com/iluwatar/mynewpattern` 下实现模式逻辑,通常包含一个演示用法的 `App.java` 类。
+- **编写测试**:在 `src/test/java/com/iluwatar/mynewpattern` 下添加完整的单元测试。
+- **编写文档**:在新模块根目录创建 `README.md`,按惯例包含意图(Intent)、解释(Explanation)、类图(Class diagram)、适用场景(Applicability)、真实案例(Real world examples)等标准章节。

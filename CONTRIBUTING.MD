@@ -1,3 +1,5 @@
-The project guidelines can be found in [Java Design Patterns developer wiki](https://github.com/iluwatar/java-design-patterns/wiki). 
+> 🌐 本文档由 [iluwatar/java-design-patterns](https://github.com/iluwatar/java-design-patterns) 翻译,英文原版见原项目。
 
-A good place to start is: https://github.com/iluwatar/java-design-patterns/wiki/01.-How-to-contribute
+本项目的贡献指南见 [Java Design Patterns 开发者 Wiki](https://github.com/iluwatar/java-design-patterns/wiki)。
+
+建议从这里入手:https://github.com/iluwatar/java-design-patterns/wiki/01.-How-to-contribute
