@@ -25,41 +25,40 @@
 package com.iluwatar.singleton;
 
 /**
- * Bill Pugh Singleton Implementation.
+ * Bill Pugh 单例实现(静态内部类方式)。
  *
- * <p>This implementation of the singleton design pattern takes advantage of the Java memory model's
- * guarantees about class initialization. Each class is initialized only once, when it is first
- * used. If the class hasn't been used yet, it won't be loaded into memory, and no memory will be
- * allocated for a static instance. This makes the singleton instance lazy-loaded and thread-safe.
+ * <p>这种单例模式的实现利用了 Java 内存模型对类初始化的保证:每个类只会在首次被使用时初始化一次。
+ * 如果类尚未被使用,它就不会被加载进内存,也不会为静态实例分配内存。
+ * 这使得单例实例既是懒加载的,又是线程安全的。
  */
 public final class BillPughImplementation {
 
-  /** Private constructor to prevent instantiation from outside the class. */
+  /** 私有构造器,防止在类外部实例化。 */
   private BillPughImplementation() {
-    // to prevent instantiating by Reflection call
+    // 防止通过反射调用进行实例化
     if (InstanceHolder.instance != null) {
       throw new IllegalStateException("Already initialized.");
     }
   }
 
   /**
-   * The InstanceHolder is a static inner class, and it holds the Singleton instance. It is not
-   * loaded into memory until the getInstance() method is called.
+   * InstanceHolder 是一个静态内部类,负责持有单例实例。
+   * 在 getInstance() 方法被调用之前,它不会被加载进内存。
    */
   private static class InstanceHolder {
-    /** Singleton instance of the class. */
+    /** 该类的单例实例。 */
     private static BillPughImplementation instance = new BillPughImplementation();
   }
 
   /**
-   * Public accessor for the singleton instance.
+   * 单例实例的公开访问器。
    *
-   * <p>When this method is called, the InstanceHolder is loaded into memory and creates the
-   * Singleton instance. This method provides a global access point for the singleton instance.
+   * <p>当该方法被调用时,InstanceHolder 会被加载进内存并创建单例实例。
+   * 该方法为单例实例提供了全局访问点。
    *
-   * @return an instance of the class.
+   * @return 该类的单例实例。
    */
-  // global access point
+  // 全局访问点
   public static BillPughImplementation getInstance() {
     return InstanceHolder.instance;
   }

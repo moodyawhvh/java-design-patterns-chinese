@@ -25,53 +25,50 @@
 package com.iluwatar.singleton;
 
 /**
- * Double check locking.
+ * 双重检查锁(Double check locking)实现的单例模式。
  *
- * <p>http://www.cs.umd.edu/~pugh/java/memoryModel/DoubleCheckedLocking.html
+ * <p>参考资料:http://www.cs.umd.edu/~pugh/java/memoryModel/DoubleCheckedLocking.html
  *
- * <p>Broken under Java 1.4.
+ * <p>注意:该写法在 Java 1.4 及之前版本中是有缺陷的(broken)。
  */
 public final class ThreadSafeDoubleCheckLocking {
   /**
-   * Singleton instance of the class, declared as volatile to ensure atomic access by multiple
-   * threads.
+   * 类的单例实例。声明为 volatile,以保证多线程访问时的可见性与原子性。
    */
   private static volatile ThreadSafeDoubleCheckLocking instance;
 
-  /** private constructor to prevent client from instantiating. */
+  /** 私有构造器,防止外部客户端直接实例化。 */
   private ThreadSafeDoubleCheckLocking() {
-    // to prevent instantiating by Reflection call
+    // 防止通过反射调用进行实例化
     if (instance != null) {
       throw new IllegalStateException("Already initialized.");
     }
   }
 
   /**
-   * Public accessor.
+   * 公开的实例访问器。
    *
-   * @return an instance of the class.
+   * @return 该类的单例实例。
    */
   public static ThreadSafeDoubleCheckLocking getInstance() {
-    // local variable increases performance by 25 percent
-    // Joshua Bloch "Effective Java, Second Edition", p. 283-284
+    // 使用局部变量可使性能提升约 25%
+    // 出自 Joshua Bloch《Effective Java(第二版)》第 283-284 页
 
     var result = instance;
-    // Check if singleton instance is initialized.
-    // If it is initialized then we can return the instance.
+    // 检查单例实例是否已经初始化。
+    // 若已初始化,直接返回该实例。
     if (result == null) {
-      // It is not initialized, but we cannot be sure because some other thread might have
-      // initialized it in the meanwhile.
-      // So to make sure we need to lock on an object to get mutual exclusion.
+      // 实例尚未初始化,但并不能确定,因为其他线程可能在此期间已经完成了初始化。
+      // 因此必须对对象加锁以获得互斥性,确保万无一失。
       synchronized (ThreadSafeDoubleCheckLocking.class) {
-        // Again assign the instance to local variable to check if it was initialized by some
-        // other thread while current thread was blocked to enter the locked zone.
-        // If it was initialized then we can return the previously created instance
-        // just like the previous null check.
+        // 再次把实例赋给局部变量,检查在当前线程阻塞等待进入锁定区的期间,
+        // 是否已有其他线程完成了初始化。
+        // 若已初始化,则和上一次判空一样,直接返回先前创建好的实例。
         result = instance;
         if (result == null) {
-          // The instance is still not initialized, so we can safely
-          // (no other thread can enter this zone)
-          // create an instance and make it our singleton instance.
+          // 实例仍未初始化,此时可以安全地
+          // (其他线程无法进入此代码块)
+          // 创建实例,并将其作为我们的单例实例。
           result = new ThreadSafeDoubleCheckLocking();
           instance = result;
         }
